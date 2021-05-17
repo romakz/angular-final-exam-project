@@ -1,14 +1,14 @@
 <div class="card-product">
   <div class="img-box">
-    <img src="assets/images/produts/laptop/lenova1.jpg" alt="">
+    <img src="{{product.urlImg}}" alt="">
   </div>
 
   <div class="name-box">
-    <p>Name Product</p>
+    <p>{{product.name}}</p>
   </div>
 
   <div class="price-btn-box">
-    <span>1000 ₸</span>
-    <a mat-stroked-button routerLink="/registration" class="show-details-btn">ПОДРОБНОЕЕ</a>
+    <span [style]="{'color': '#ff681d'}">{{product.price | currency: 'KZ'}}</span>
+<!--    <a mat-stroked-button routerLink="/registration" class="show-details-btn">ПОДРОБНОЕЕ</a>-->
   </div>
 </div>

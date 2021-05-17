@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {AuthService} from "../../service/auth.service";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -12,12 +13,14 @@ export class HeaderComponent implements OnInit {
     inputText: new FormControl('')
   });
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {}
 
   clickSearchBtn(): void {
-
+    if (this.searchForm.valid) {
+      this.router.navigate(['/store/search', this.searchForm.getRawValue().inputText]);
+    }
   }
 
   isAuth(): boolean {

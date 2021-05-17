@@ -1,11 +1,11 @@
 <div class="card">
   <div class="card-img">
-    <img src="assets/images/produts/node/node1.jpg" alt="Product image">
+    <img src="{{product.urlImg}}" alt="Product image">
   </div>
   <div class="cart-name">
-    Ноутбук Asus X515JA i3 1005G1
+    {{product.name | nameCut}}
   </div>
   <div class="cart-price">
-    214 990 тг
+    {{product.price | currency: 'KZ'}}
   </div>
 </div>

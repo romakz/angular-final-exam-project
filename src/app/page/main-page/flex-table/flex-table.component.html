@@ -11,11 +11,6 @@
   </div>
 
   <div class="flex-elements">
-    <app-flex-elem-card></app-flex-elem-card>
-    <app-flex-elem-card></app-flex-elem-card>
-    <app-flex-elem-card></app-flex-elem-card>
-    <app-flex-elem-card></app-flex-elem-card>
-    <app-flex-elem-card></app-flex-elem-card>
-    <app-flex-elem-card></app-flex-elem-card>
+    <app-flex-elem-card *ngFor="let p of products" [product]="p"></app-flex-elem-card>
   </div>
 </div>

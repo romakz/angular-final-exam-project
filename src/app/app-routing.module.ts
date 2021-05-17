@@ -4,6 +4,8 @@ import {MainPageComponent} from "./page/main-page/main-page.component";
 import {LoginPageComponent} from "./page/login-page/login-page.component";
 import {RegistrationPageComponent} from "./page/registration-page/registration-page.component";
 import {MyAccountPageComponent} from "./page/my-account-page/my-account-page.component";
+import {AccoutPageGuard} from './guard/accout-page.guard';
+import {AccoutPaheForChildGuard} from './guard/accout-pahe-for-child.guard';
 
 const routes: Routes = [
   {
@@ -12,10 +14,20 @@ const routes: Routes = [
   },
   {
     path: 'my-account',
-    component: MyAccountPageComponent
+    component: MyAccountPageComponent,
+    canActivate: [AccoutPageGuard],
+    canActivateChild: [AccoutPaheForChildGuard]
   },
   {
     path: 'store',
+    loadChildren: () => import('./module/store/store.module').then(m => m.StoreModule)
+  },
+  {
+    path: 'store/:tag',
+    loadChildren: () => import('./module/store/store.module').then(m => m.StoreModule)
+  },
+  {
+    path: 'store/search/:name',
     loadChildren: () => import('./module/store/store.module').then(m => m.StoreModule)
   },
   {

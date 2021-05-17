@@ -1,7 +1,7 @@
 <div class="box-filter">
   <div>
 
-    <form [formGroup]="filterForm">
+    <form [formGroup]="filterForm" (ngSubmit)="getProducts()">
 
       <div class="price-form">
         <p>Цена</p>
@@ -14,7 +14,7 @@
       <div class="brent-form">
         <p>Брент</p>
         <div class="brent-form-box">
-          <mat-checkbox formControlName="apple">Apple</mat-checkbox>
+          <mat-checkbox formControlName="apple" name="apple">Apple</mat-checkbox>
           <mat-checkbox formControlName="huawei">Huawei</mat-checkbox>
           <mat-checkbox formControlName="lenova">Lenova</mat-checkbox>
           <mat-checkbox formControlName="samsung">Samsung</mat-checkbox>
@@ -31,6 +31,8 @@
           <mat-checkbox formControlName="gamingConsoles">Gaming consoles</mat-checkbox>
         </div>
       </div>
+
+      <button type="submit" mat-flat-button>Пременить</button>
 
     </form>
   </div>

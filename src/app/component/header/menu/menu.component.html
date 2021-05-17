@@ -3,22 +3,22 @@
     <div class="menu-child">
       <button mat-button [matMenuTriggerFor]="allCategories">Все категории</button>
       <mat-menu #allCategories="matMenu">
-        <button mat-menu-item [matMenuTriggerFor]="type1">{{menuList[0].name}}</button>
-        <button mat-menu-item [matMenuTriggerFor]="type2">{{menuList[1].name}}</button>
-        <button mat-menu-item [matMenuTriggerFor]="type3">{{menuList[2].name}}</button>
+        <button mat-menu-item [matMenuTriggerFor]="type1" (click)="nag1('/store', 'smartphone')">{{menuList[0].name}}</button>
+        <button mat-menu-item [matMenuTriggerFor]="type2" (click)="nag1('/store', 'laptop')">{{menuList[1].name}}</button>
+        <button mat-menu-item [matMenuTriggerFor]="type3" (click)="nag1('/store', 'console')">{{menuList[2].name}}</button>
       </mat-menu>
 
       <mat-menu #type1="matMenu">
-        <button mat-menu-item *ngFor="let item of menuList[0].list">{{item}}</button>
+        <button mat-menu-item *ngFor="let item of menuList[0].list; let i = index" (click)="nav2(1, i)">{{item}}</button>
       </mat-menu>
 
       <mat-menu #type2="matMenu">
-        <button mat-menu-item *ngFor="let item of menuList[1].list">{{item}}</button>
+        <button mat-menu-item *ngFor="let item of menuList[1].list; let i = index" (click)="nav2(2, i)">{{item}}</button>
 
       </mat-menu>
 
       <mat-menu #type3="matMenu">
-        <button mat-menu-item *ngFor="let item of menuList[2].list">{{item}}</button>
+        <button mat-menu-item *ngFor="let item of menuList[2].list; let i = index" (click)="nav2(3, i)">{{item}}</button>
       </mat-menu>
     </div>
 
@@ -27,9 +27,13 @@
         <mat-icon aria-hidden="false">favorite_border</mat-icon>
         <span>Избранное</span>
       </div>
-      <div>
+<!--      <div>-->
+<!--        <mat-icon aria-hidden="false">shopping_cart</mat-icon>-->
+<!--        <span>Корзина</span>-->
+<!--      </div>-->
+      <div routerLink="/store">
         <mat-icon aria-hidden="false">shopping_cart</mat-icon>
-        <span>Корзина</span>
+        <span>Store</span>
       </div>
     </div>
   </div>

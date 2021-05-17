@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
 import {User} from "../my-objects/user";
 import {HttpClient} from "@angular/common/http";
+import {Router} from '@angular/router';
 
 @Injectable()
 export class AuthService {
@@ -10,7 +11,7 @@ export class AuthService {
   userEmail: string | null = '';
   isAuth = false;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     if (localStorage.getItem('userId') != null && localStorage.getItem('userEmail') != null) {
       this.userEmail = localStorage.getItem('userEmail');
       this.userId = localStorage.getItem('userId');
@@ -38,6 +39,9 @@ export class AuthService {
     this.isAuth = false;
     this.userId = '';
     this.userEmail = '';
+    localStorage.removeItem('userId');
+    localStorage.removeItem('userEmail');
+    this.router.navigate(['/']);
   }
 
   getUserEmail(): string | null {

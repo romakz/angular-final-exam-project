@@ -23,6 +23,10 @@ import {AuthService} from "./service/auth.service";
 import { MyAccountPageComponent } from './page/my-account-page/my-account-page.component';
 import {HttpClientModule} from "@angular/common/http";
 import {UserService} from "./service/user.service";
+import {ProductService} from './service/product.service';
+import { NameCutPipe } from './pipe/name-cut.pipe';
+import {AccoutPageGuard} from './guard/accout-page.guard';
+import {AccoutPaheForChildGuard} from './guard/accout-pahe-for-child.guard';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,8 @@ import {UserService} from "./service/user.service";
     FlexElemCardComponent,
     LoginPageComponent,
     RegistrationPageComponent,
-    MyAccountPageComponent
+    MyAccountPageComponent,
+    NameCutPipe
   ],
   imports: [
     BrowserModule,
@@ -52,7 +57,13 @@ import {UserService} from "./service/user.service";
   ],
   providers: [
     AuthService,
-    UserService
+    UserService,
+    ProductService,
+    AccoutPageGuard,
+    AccoutPaheForChildGuard
+  ],
+  exports: [
+
   ],
   bootstrap: [AppComponent]
 })

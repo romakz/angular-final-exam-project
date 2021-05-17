@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Product} from '../../../../my-objects/product';
 
 @Component({
   selector: 'app-flex-elem-card',
@@ -6,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./flex-elem-card.component.scss']
 })
 export class FlexElemCardComponent implements OnInit {
+  @Input() product: Product = new Product(-1,'', -1, '', []);
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }
