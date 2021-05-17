@@ -1,1 +1,37 @@
-<p>filter-panel works!</p>
+<div class="box-filter">
+  <div>
+
+    <form [formGroup]="filterForm">
+
+      <div class="price-form">
+        <p>Цена</p>
+        <div class="price-form-flex">
+          <input type="number" formControlName="priceLeft" name="priceLeft">
+          <input type="number" formControlName="priceRight" name="priceRight">
+        </div>
+      </div>
+
+      <div class="brent-form">
+        <p>Брент</p>
+        <div class="brent-form-box">
+          <mat-checkbox formControlName="apple">Apple</mat-checkbox>
+          <mat-checkbox formControlName="huawei">Huawei</mat-checkbox>
+          <mat-checkbox formControlName="lenova">Lenova</mat-checkbox>
+          <mat-checkbox formControlName="samsung">Samsung</mat-checkbox>
+          <mat-checkbox formControlName="sony">Sony</mat-checkbox>
+          <mat-checkbox formControlName="microsoft">Microsoft</mat-checkbox>
+        </div>
+      </div>
+
+      <div class="type-form">
+        <p>Типы</p>
+        <div class="type-form-box">
+          <mat-checkbox formControlName="laptop">Laptop</mat-checkbox>
+          <mat-checkbox formControlName="smartphone">Smartphone</mat-checkbox>
+          <mat-checkbox formControlName="gamingConsoles">Gaming consoles</mat-checkbox>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

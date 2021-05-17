@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
 import {StorePageComponent} from "../../page/store-page/store-page.component";
 import {FilterPanelComponent} from "../../page/store-page/filter-panel/filter-panel.component";
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {ProductCardComponent} from '../../page/store-page/product-card/product-card.component';
+import {MatButtonModule} from '@angular/material/button';
 
 const storeRoutes: Routes = [
   {
@@ -14,12 +18,16 @@ const storeRoutes: Routes = [
 @NgModule({
   declarations: [
     StorePageComponent,
-    FilterPanelComponent
+    FilterPanelComponent,
+    ProductCardComponent
   ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(storeRoutes)
-  ],
+    imports: [
+      CommonModule,
+      RouterModule.forChild(storeRoutes),
+      ReactiveFormsModule,
+      MatCheckboxModule,
+      MatButtonModule
+    ],
   exports: [
     RouterModule
   ]

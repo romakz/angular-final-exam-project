@@ -1,0 +1,36 @@
+.card-product {
+  width: 230px;
+  background: white;
+  box-sizing: border-box;
+  border: 1px solid #b0afaf;
+
+  &:hover {
+    border: 2px solid #ff681d;
+  }
+  padding: 20px;
+}
+
+.img-box {
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
+}
+
+.name-box {
+  text-align: center;
+}
+
+.price-btn-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.show-details-btn {
+  color: #fff;
+  background: #2cd878;
+  border-radius: 20px;
+}

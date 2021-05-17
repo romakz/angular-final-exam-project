@@ -2,3 +2,16 @@
   padding: 0 100px;
   background: #f4f4f4;
 }
+
+.box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-table {
+  width: calc(230px * 4);
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 50px 0;
+}
