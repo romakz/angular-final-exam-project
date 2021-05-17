@@ -1,0 +1,118 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "romakz@gmail.com",
+      "password": "123",
+      "name": "Roma",
+      "surname": "Ramazan"
+    },
+    {
+      "name": "User1",
+      "surname": "User1",
+      "email": "user1@gmail.com",
+      "password": "123",
+      "id": 2
+    }
+  ],
+
+  "products": [
+    {
+      "id": 1,
+      "name": "Игровая консоль XBOX One S 1TB All Digital SOT, Minecraft, Fortnite (NJP-00060)",
+      "price": 114990,
+      "urlImg": "",
+      "tags": [
+        "Всё для геймеров", "xbox"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Игровая консоль Nintendo Switch Animal Crossing: New Horizons Edition",
+      "price": 179990,
+      "urlImg": "",
+      "tags": [
+        "Всё для геймеров", "nintendo"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Игровая консоль Sony PlayStation 4 Slim 1TB, Black + Bundle (CUH-2208B/GTS/HZD CE/SpiderM/PS+3M)",
+      "price": 177990,
+      "urlImg": "",
+      "tags": [
+        "Всё для геймеров", "playstation"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Ноутбук Lenovo V14 Athlon Gold 3150U / 8Гб / 128SSD / 14 / Win10 / (82C6S03900)",
+      "price": 169990,
+      "urlImg": "",
+      "tags": [
+        "", "lenovo", "laptop"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Игровой Ноутбук Asus ROG Strix G15 i5 10300H / 16ГБ / 1000SSD / GTX1650Ti 4ГБ / 15.6 / DOS / (G512LI-HN210)",
+      "price": 419990,
+      "urlImg": "",
+      "tags": [
+        "", "asus", "laptop"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Ноутбук Apple MacBook Air Retina M1 / 8ГБ / 256SSD / 13 / Mac OS Big Sur / (MGN63RU/A)",
+      "price": 556990,
+      "urlImg": "",
+      "tags": [
+        "", "apple", "macbook", "laptop"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Смартфон Samsung Galaxy A52 128GB Black",
+      "price": 179990,
+      "urlImg": "",
+      "tags": [
+        "", "smartphone", "samsung"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Смартфон Apple iPhone 11 128GB Black",
+      "price": 394990,
+      "urlImg": "",
+      "tags": [
+        "", "smartphone", "apple", "iphone"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Смартфон Huawei P Smart 2021 128GB Black",
+      "price": 99990,
+      "urlImg": "",
+      "tags": [
+        "", "smartphone", "huawei"
+      ]
+    },{
+      "id": 10,
+      "name": "Смартфон Samsung Galaxy A31 64GB Black",
+      "price": 89990,
+      "urlImg": "",
+      "tags": [
+        "", "smartphone", "samsung"
+      ]
+    },{
+      "id": 12,
+      "name": "Смартфон Apple iPhone 12 64GB Black",
+      "price": 459990,
+      "urlImg": "",
+      "tags": [
+        "", "smartphone", "apple", "iphone"
+      ]
+    }
+  ]
+}

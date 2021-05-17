@@ -1,0 +1,33 @@
+<header>
+  <div class="wrapper">
+    <div class="header-body">
+
+      <div class="logo-child">
+        <div class="logos" routerLink="/my-account">
+          <img src="/assets/images/logo/logo_dom.svg" alt="logo svg1">
+          <img src="/assets/images/logo/logo_technodom.svg" alt="logo svg2">
+          <img src="/assets/images/logo/logo_kz.svg" alt="logo svg2">
+        </div>
+        <div class="slogan">Легко купить - легко использовать</div>
+      </div>
+
+      <div class="search-child">
+        <form [formGroup]="searchForm" (ngSubmit)="clickSearchBtn()">
+
+          <input type="text" formControlName="inputText" placeholder="Я хочу найти...">
+          <button>
+            <mat-icon>search</mat-icon>
+          </button>
+
+        </form>
+      </div>
+
+      <div class="btn-child">
+        <a *ngIf="!isAuth()" mat-button routerLink="/login" class="sign-in-btn">Войти</a>
+        <a *ngIf="!isAuth()" mat-stroked-button routerLink="/registration" class="sign-up-btn">Регистрация</a>
+        <a *ngIf="isAuth()" mat-button  routerLink="/my-account" class="sign-up-btn">{{getEmail()}}</a>
+      </div>
+    </div>
+  </div>
+</header>
+<app-menu></app-menu>

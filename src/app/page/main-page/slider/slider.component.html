@@ -1,0 +1,27 @@
+<div class="slider-body">
+  <button class="btn-l" (click)="leftBtn()">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+
+  <div class="slider-img-box">
+
+    <img *ngIf="showIndex === 0" src="https://www.technodom.kz/media/scandiweb/slider/1/0/1080.460_25_.webp" alt=""/>
+    <img *ngIf="showIndex === 1" src="https://www.technodom.kz/media/scandiweb/slider/1/0/1080.460_50_.webp" alt=""/>
+    <img *ngIf="showIndex === 2" src="https://www.technodom.kz/media/scandiweb/slider/1/0/1080x460_70_.webp" alt=""/>
+    <img *ngIf="showIndex === 3" src="https://www.technodom.kz/media/scandiweb/slider/1/0/1080.460_35_.webp" alt=""/>
+    <img *ngIf="showIndex === 4" src="https://www.technodom.kz/media/scandiweb/slider/i/p/ipad1080n.png" alt=""/>
+
+  </div>
+
+  <div class="items">
+    <div class="btn-choose" [ngClass]="{'active-index': showIndex === 0}" (click)="setIndex(0)"></div>
+    <div class="btn-choose" [ngClass]="{'active-index': showIndex === 1}" (click)="setIndex(1)"></div>
+    <div class="btn-choose" [ngClass]="{'active-index': showIndex === 2}" (click)="setIndex(2)"></div>
+    <div class="btn-choose" [ngClass]="{'active-index': showIndex === 3}" (click)="setIndex(3)"></div>
+    <div class="btn-choose" [ngClass]="{'active-index': showIndex === 4}" (click)="setIndex(4)"></div>
+  </div>
+
+  <button class="btn-r" (click)="rightBtn()">
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+</div>

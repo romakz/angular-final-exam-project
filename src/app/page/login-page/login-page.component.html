@@ -1,0 +1,42 @@
+<div class="form-box">
+
+  <div class="body">
+
+    <h1 class="form-h1">Форма входа</h1>
+
+    <div class="form-body">
+
+      <form [formGroup]="loginForm" (ngSubmit)="clickLogin()">
+
+        <mat-form-field class="input-f">
+          <mat-label>Email:</mat-label>
+          <input type="email" matInput formControlName="email" placeholder="email@gmail.com">
+
+          <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+
+          <mat-error *ngIf="email.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field class="input-f">
+          <mat-label>Password:</mat-label>
+          <input type="password" matInput formControlName="password" placeholder="password">
+          <mat-error *ngIf="password.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <button class="btn" type="submit" mat-raised-button color="primary">Войти в аккаунт</button>
+
+      </form>
+
+    </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,21 @@
+<div class="box">
+  <div class="filters-btn">
+    <button
+      *ngFor="let type of productTypes; let i = index;"
+      class="filter-btn"
+      (click)="setActiveIndex(i)"
+      [ngClass]="{'active': getActiveIndex() == i}"
+    >
+      {{type}}
+    </button>
+  </div>
+
+  <div class="flex-elements">
+    <app-flex-elem-card></app-flex-elem-card>
+    <app-flex-elem-card></app-flex-elem-card>
+    <app-flex-elem-card></app-flex-elem-card>
+    <app-flex-elem-card></app-flex-elem-card>
+    <app-flex-elem-card></app-flex-elem-card>
+    <app-flex-elem-card></app-flex-elem-card>
+  </div>
+</div>

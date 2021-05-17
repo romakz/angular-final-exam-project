@@ -1,0 +1,80 @@
+.wrapper {
+  padding: 0 100px;
+}
+
+.header-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  box-sizing: border-box;
+  padding: 15px 10px;
+}
+
+.logo-child {
+  text-align: center;
+
+  .logos {
+    outline: none;
+    cursor: pointer;
+  }
+
+  .slogan {
+    font-size: 12px;
+    font-weight: 300;
+    color: #202020;
+  }
+}
+
+.search-child {
+  width: 552px;
+
+  form {
+    width: 100%;
+    display: flex;
+
+    input {
+      width: 89%;
+      border: 2px solid #ff681d;
+      padding: 1rem 1.9rem;
+      font-size: 15px;
+      box-sizing: border-box;
+      border-bottom-left-radius: 2rem;
+      border-top-left-radius: 2rem;
+      outline: none;
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 11%;
+      color: #fff;
+      background: #ff681d;
+      border: none;
+      border-bottom-right-radius: 2rem;
+      border-top-right-radius: 2rem;
+      cursor: pointer;
+    }
+  }
+}
+
+.btn-child {
+  width: 205px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .sign-in-btn {
+    color: #ff681d;
+    border-radius: 20px;
+  }
+
+  .sign-up-btn {
+    color: #202020;
+    border-color: #ff681d;
+    border-radius: 20px;
+  }
+}
+
+

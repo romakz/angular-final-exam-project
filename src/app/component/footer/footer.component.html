@@ -1,0 +1,29 @@
+<footer>
+  <div class="wrapper">
+
+    <div class="footer-body">
+
+      <div class="top-div">
+
+        <ul *ngFor="let elem of menuList">
+          <li class="ul-title">
+            {{elem.name}}
+          </li>
+          <li *ngFor="let item of elem.list">{{item}}</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="bottom-div">
+    <p>© АО «Technodom Operator» 2002—2021</p>
+
+    <div class="flex-div">
+      <p>Официальное уведомление</p>
+      <p>Политика конфиденциальности</p>
+    </div>
+  </div>
+</footer>
