@@ -32,6 +32,10 @@ import { ProfileInfoComponent } from './page/my-account-page/profile-info/profil
 import { HistoryOrdersComponent } from './page/my-account-page/history-orders/history-orders.component';
 import { FavoriteListComponent } from './page/my-account-page/favorite-list/favorite-list.component';
 import {StoreModule} from './module/store/store.module';
+import { CartPageComponent } from './page/cart-page/cart-page.component';
+import {CartService} from './service/cart.service';
+import { ProductDetailComponent } from './page/product-detail/product-detail.component';
+import {OrderService} from './service/order.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +53,9 @@ import {StoreModule} from './module/store/store.module';
     NameCutPipe,
     ProfileInfoComponent,
     HistoryOrdersComponent,
-    FavoriteListComponent
+    FavoriteListComponent,
+    CartPageComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -69,6 +75,8 @@ import {StoreModule} from './module/store/store.module';
     UserService,
     ProductService,
     FavoriteListService,
+    OrderService,
+    CartService,
     AccoutPageGuard,
     AccoutPaheForChildGuard
   ],

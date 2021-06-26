@@ -34,7 +34,7 @@ export class StorePageComponent implements OnInit {
     }
   }
 
-  getRequest(request: string): void {
+  getRequest(request: any): void {
     this.productService.getProductsFilter(request).subscribe(res => {
       this.products = res;
     });

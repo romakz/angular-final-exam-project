@@ -7,11 +7,11 @@ import {FormControl, FormGroup} from '@angular/forms';
   styleUrls: ['./filter-panel.component.scss']
 })
 export class FilterPanelComponent implements OnInit {
-  @Output() restRequest = new EventEmitter<string>();
+  @Output() restRequest = new EventEmitter<any>();
 
   filterForm = new FormGroup({
     priceLeft: new FormControl(0),
-    priceRight: new FormControl(199990),
+    priceRight: new FormControl(900000),
     apple: new FormControl(false),
     huawei: new FormControl(false),
     lenova: new FormControl(false),
@@ -29,41 +29,51 @@ export class FilterPanelComponent implements OnInit {
   }
 
   getProducts(): void {
-    let request = '?';
-
-    if (this.filterForm.getRawValue().priceLeft || this.filterForm.getRawValue().priceLeft === 0) {
-      request += 'price_gte=' + this.filterForm.getRawValue().priceLeft;
-    }
-    if (this.filterForm.getRawValue().priceRight) {
-      request += '&price_lte=' + this.filterForm.getRawValue().priceRight;
-    }
+    let tagsNames: string[] = [];
 
     if (this.filterForm.getRawValue().apple) {
-      request += '&tags_like=apple';
-    }
-    if (this.filterForm.getRawValue().huawei === true) {
-      request += '&tags_like=huawei';
-    }
-    if (this.filterForm.getRawValue().lenova) {
-      request += '&tags_like=lenova';
-    }
-    if (this.filterForm.getRawValue().samsung) {
-      request += '&tags_like=samsung';
-    }
-    if (this.filterForm.getRawValue().microsoft) {
-      request += '&tags_like=microsoft';
-    }
-    if (this.filterForm.getRawValue().laptop) {
-      request += '&tags_like=laptop';
-    }
-    if (this.filterForm.getRawValue().smartphone) {
-      request += '&tags_like=smartphone';
-    }
-    if (this.filterForm.getRawValue().gamingConsoles) {
-      request += '&tags_like=console';
+      tagsNames.push('apple');
     }
 
-    console.log(request);
+    if (this.filterForm.getRawValue().huawei === true) {
+      tagsNames.push('huawei');
+    }
+
+    if (this.filterForm.getRawValue().lenova) {
+      tagsNames.push('lenova');
+    }
+
+    if (this.filterForm.getRawValue().sony) {
+      tagsNames.push('sony');
+    }
+
+    if (this.filterForm.getRawValue().samsung) {
+      tagsNames.push('samsung');
+    }
+
+    if (this.filterForm.getRawValue().microsoft) {
+      tagsNames.push('microsoft');
+    }
+
+    if (this.filterForm.getRawValue().laptop) {
+      tagsNames.push('laptop');
+    }
+
+    if (this.filterForm.getRawValue().smartphone) {
+      tagsNames.push('smartphone');
+    }
+
+    if (this.filterForm.getRawValue().gamingConsoles) {
+      tagsNames.push('console');
+    }
+
+    let request = {
+      priceMin: this.filterForm.getRawValue().priceLeft,
+      priceMax: this.filterForm.getRawValue().priceRight,
+      tags: tagsNames
+    };
+
+
     this.restRequest.emit(request);
   }
 }

@@ -26,4 +26,8 @@ export class FavoriteListComponent implements OnInit {
     });
   }
 
+  updateFavoritesByUserId(): void {
+    this.getFavoritesByUserId();
+  }
+
 }

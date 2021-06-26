@@ -1,1 +1,31 @@
-<p>history-orders works!</p>
+<div>
+  <div *ngFor="let order of orders">
+    <div style="display: flex; align-content: start; justify-content: space-between; font-weight: 600;">
+      <div>Дата: {{order.date}}</div>
+      <div style="color: #ff681d">Стоимость: {{order.cost | currency:'KZ'}}</div>
+    </div>
+
+    <div class="table">
+      <div class="table-header">
+        <span>ТОВАРЫ</span>
+        <span>ЦЕНА</span>
+      </div>
+
+      <div class="table-item" *ngFor="let item of order.orderItems">
+        <div class="item-info">
+
+          <div class="item-info-img-box">
+            <img [src]="item.product.urlImg">
+          </div>
+
+          {{item.product.name}}
+
+        </div>
+
+        <div>
+          {{item.product.price}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

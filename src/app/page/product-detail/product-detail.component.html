@@ -1,0 +1,15 @@
+<div class="product-detail-page-wrapper">
+  <div class="content-product">
+
+    <div class="product-img">
+      <img [src]="product.urlImg">
+    </div>
+
+    <div>
+      <h2>{{product.name}}</h2>
+      <div class="price">{{product.price | currency: 'KZ'}}</div>
+      <button mat-flat-button class="btn-add-to-cart" (click)="addProduct()">Добавить в корзину</button>
+    </div>
+
+  </div>
+</div>

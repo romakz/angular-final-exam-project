@@ -5,7 +5,7 @@ import {Observable} from "rxjs";
 
 @Injectable()
 export class UserService {
-  api = 'http://localhost:3000/users';
+  api = '/users';
 
   constructor(private http: HttpClient) { }
 
@@ -18,6 +18,6 @@ export class UserService {
   }
 
   updateUserData(user: User): Observable<User> {
-    return this.http.put<User>(this.api + '/' + user.id, user);
+    return this.http.put<User>(this.api, user);
   }
 }

@@ -7,7 +7,7 @@ import {Product} from '../../../../my-objects/product';
   styleUrls: ['./flex-elem-card.component.scss']
 })
 export class FlexElemCardComponent implements OnInit {
-  @Input() product: Product = new Product(-1,'', -1, '', []);
+  @Input() product: Product = new Product(-1, '', -1, '');
 
   constructor() { }
 

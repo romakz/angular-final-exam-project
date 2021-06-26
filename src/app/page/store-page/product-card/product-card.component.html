@@ -3,13 +3,19 @@
     <img src="{{product.urlImg}}" alt="">
   </div>
 
-  <div class="name-box">
+  <div class="name-box" routerLink="/product/{{product.id}}">
     <p>{{product.name}}</p>
   </div>
 
-  <div class="btn-add-list-like">
+  <div class="btn-add-list-like" *ngIf="showAddBtn">
     <button mat-mini-fab [color]="'#fff'" (click)="addFavoriteProduct(product)">
       <mat-icon>favorite_border</mat-icon>
+    </button>
+  </div>
+
+  <div class="btn-delete-list-like" *ngIf="!showAddBtn">
+    <button mat-mini-fab [color]="'#fff'" (click)="deleteFavoriteProduct(product)">
+      <mat-icon>delete</mat-icon>
     </button>
   </div>
 

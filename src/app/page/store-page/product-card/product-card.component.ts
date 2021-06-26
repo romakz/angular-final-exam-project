@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Product} from '../../../my-objects/product';
 import {UserService} from '../../../service/user.service';
 import {FavoriteListService} from '../../../service/favorite-list.service';
@@ -11,7 +11,10 @@ import {AuthService} from '../../../service/auth.service';
   styleUrls: ['./product-card.component.scss']
 })
 export class ProductCardComponent implements OnInit {
-  @Input() product: Product = new Product(-1, '', -1, '', []);
+  @Input() product: Product = new Product(-1, '', -1, '');
+  @Input() showAddBtn = false;
+  @Output() updateInfo: EventEmitter<any> = new EventEmitter();
+  @Input() favoriteId = -1;
 
   constructor(
     private authService: AuthService,
@@ -22,8 +25,14 @@ export class ProductCardComponent implements OnInit {
   }
 
   public addFavoriteProduct(product_: Product): void {
-    this.favoriteService.addFavoriteProduct({userId: Number(this.authService.getUserId()), product: product_}).subscribe(res => {
+    this.favoriteService.addFavoriteProduct({userId: Number(this.authService.getUserId()), product: product_, productId: product_.id}).subscribe(res => {
       console.log(res);
+    });
+  }
+
+  deleteFavoriteProduct(product: Product): void {
+    this.favoriteService.deleteFavoriteProduct(this.favoriteId).subscribe(res => {
+      this.updateInfo.emit();
     });
   }
 }

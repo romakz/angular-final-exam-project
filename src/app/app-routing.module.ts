@@ -9,6 +9,8 @@ import {AccoutPaheForChildGuard} from './guard/accout-pahe-for-child.guard';
 import {ProfileInfoComponent} from './page/my-account-page/profile-info/profile-info.component';
 import {HistoryOrdersComponent} from './page/my-account-page/history-orders/history-orders.component';
 import {FavoriteListComponent} from './page/my-account-page/favorite-list/favorite-list.component';
+import {CartPageComponent} from './page/cart-page/cart-page.component';
+import {ProductDetailComponent} from './page/product-detail/product-detail.component';
 
 const routes: Routes = [
   {
@@ -46,6 +48,14 @@ const routes: Routes = [
   {
     path: 'store/search/:name',
     loadChildren: () => import('./module/store/store.module').then(m => m.StoreModule)
+  },
+  {
+    path: 'product/:id',
+    component: ProductDetailComponent
+  },
+  {
+    path: 'cart',
+    component: CartPageComponent
   },
   {
     path: 'login',

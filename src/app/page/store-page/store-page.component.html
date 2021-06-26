@@ -5,7 +5,7 @@
     <app-filter-panel (restRequest)="getRequest($event)"></app-filter-panel>
 
     <div class="product-table">
-      <app-product-card *ngFor="let p of products" [product]="p"></app-product-card>
+      <app-product-card *ngFor="let p of products" [product]="p" [showAddBtn]="true"></app-product-card>
     </div>
   </div>
 

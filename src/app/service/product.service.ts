@@ -5,23 +5,28 @@ import {Product} from '../my-objects/product';
 
 @Injectable()
 export class ProductService {
-  api = 'http://localhost:3000/products';
+  api = '/products';
 
   constructor(private http: HttpClient) { }
 
-  public getProductsByTags(tag: string): Observable<Product[]> {
-    return this.http.get<Product[]>(this.api + `?tags_like=` + tag);
+  public getProductsByTags(tagName: string): Observable<Product[]> {
+    return this.http.get<Product[]>(this.api + `/filter-tag?name=` + tagName);
   }
 
   getProductsFilter(request: string): Observable<Product[]> {
-    return this.http.get<Product[]>(this.api + request);
+    console.log(request);
+    return this.http.post<Product[]>(this.api + '/filter', request);
   }
 
   getAllProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.api);
+    return this.http.get<Product[]>(this.api + '/all');
   }
 
   getProductsByName(name: string): Observable<Product[]> {
-    return this.http.get<Product[]>(this.api + '?name_like=' + name);
+    return this.http.get<Product[]>(this.api + '?name=' + name);
+  }
+
+  getProductById(id: number): Observable<Product> {
+    return this.http.get<Product>(this.api + `/${id}`);
   }
 }

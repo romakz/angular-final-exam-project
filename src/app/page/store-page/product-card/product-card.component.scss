@@ -21,6 +21,7 @@
 
 .name-box {
   text-align: center;
+  cursor: pointer;
 }
 
 .price-btn-box {
@@ -37,6 +38,12 @@
 }
 
 .btn-add-list-like {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.btn-delete-list-like {
   position: absolute;
   top: 10px;
   right: 10px;

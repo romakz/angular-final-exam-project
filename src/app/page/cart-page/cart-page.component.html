@@ -1,0 +1,52 @@
+<div class="cart-page-wrapper">
+
+  <div class="product-table">
+    <h2>Корзина</h2>
+
+    <div class="table">
+      <div class="table-header">
+        <span>ТОВАРЫ</span>
+        <span>ЦЕНА</span>
+      </div>
+
+      <div class="table-item" *ngFor="let item of items">
+        <div class="item-info">
+
+          <div class="item-info-img-box">
+            <img [src]="item.urlImg">
+          </div>
+
+          {{item.name}}
+
+        </div>
+
+        <div>
+          <button mat-mini-fab [color]="'#fff'" (click)="removeProduct(item.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+
+        <div>
+          {{item.price}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="payment-info">
+    <h2>Сумма к оплате</h2>
+
+    <div class="payment">
+      <div class="flex">
+        <div>
+          К оплате
+        </div>
+        <div class="cost-info">
+          {{ getTotalCost() | currency: 'KZ' }}
+        </div>
+      </div>
+
+      <button mat-flat-button class="btn-make-order" [disabled]="getTotalCost() <= 0" (click)="makeOrder()">Оформить заказ</button>
+    </div>
+  </div>
+</div>
