@@ -1,35 +1,23 @@
 <div class="wrapper">
   <div class="box-flex">
     <div class="l-part">
-      <button (click)="logout()">Logout</button>
+      <div class="div-link" routerLink="/my-account/profile-info" routerLinkActive="active-link">
+        <mat-icon style="margin-right: 10px">account_circle</mat-icon>
+        Мой профиль
+      </div>
+      <div class="div-link" routerLink="/my-account/history-orders" routerLinkActive="active-link">
+        <mat-icon style="margin-right: 10px">history</mat-icon>
+        История заказов
+      </div>
+      <div class="div-link" routerLink="/my-account/favorite-list" routerLinkActive="active-link">
+        <mat-icon style="margin-right: 10px">favorite_border</mat-icon>
+        Список желаний
+      </div>
+      <button (click)="logout()">Выйти</button>
     </div>
 
     <div class="r-part">
-      <h2>Мой профиль</h2>
-
-      <form [formGroup]="userForm" (ngSubmit)="saveUserData()">
-        <div>
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" formControlName="name" value="{{user.name}}">
-        </div>
-
-        <div>
-          <label for="surname">Surname</label>
-          <input type="text" id="surname" name="surname" formControlName="surname" value="{{user.surname}}">
-        </div>
-
-        <div>
-          <label for="pass">Email</label>
-          <input type="email" id="email" name="email" formControlName="email" value="{{user.email}}">
-        </div>
-
-        <div>
-          <label for="pass">Password</label>
-          <input type="password" id="pass" name="password" formControlName="password" value="{{user.password}}">
-        </div>
-
-        <button type="submit">Save</button>
-      </form>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

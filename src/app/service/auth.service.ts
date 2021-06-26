@@ -47,4 +47,8 @@ export class AuthService {
   getUserEmail(): string | null {
     return this.userEmail;
   }
+
+  getUserId(): string | null {
+    return this.userId;
+  }
 }

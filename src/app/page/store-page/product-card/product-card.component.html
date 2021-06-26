@@ -7,6 +7,12 @@
     <p>{{product.name}}</p>
   </div>
 
+  <div class="btn-add-list-like">
+    <button mat-mini-fab [color]="'#fff'" (click)="addFavoriteProduct(product)">
+      <mat-icon>favorite_border</mat-icon>
+    </button>
+  </div>
+
   <div class="price-btn-box">
     <span [style]="{'color': '#ff681d'}">{{product.price | currency: 'KZ'}}</span>
 <!--    <a mat-stroked-button routerLink="/registration" class="show-details-btn">ПОДРОБНОЕЕ</a>-->

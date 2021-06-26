@@ -25,7 +25,10 @@
       <div class="btn-child">
         <a *ngIf="!isAuth()" mat-button routerLink="/login" class="sign-in-btn">Войти</a>
         <a *ngIf="!isAuth()" mat-stroked-button routerLink="/registration" class="sign-up-btn">Регистрация</a>
-        <a *ngIf="isAuth()" mat-button  routerLink="/my-account" class="sign-up-btn">{{getEmail()}}</a>
+        <a *ngIf="isAuth()" mat-button  routerLink="/my-account/profile-info" class="sign-up-btn">
+          {{getEmail()}}
+          <mat-icon aria-hidden="false" style="color: #ff681d">account_circle</mat-icon>
+        </a>
       </div>
     </div>
   </div>

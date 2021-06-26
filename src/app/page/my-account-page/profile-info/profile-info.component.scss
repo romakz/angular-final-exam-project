@@ -1,0 +1,21 @@
+form div {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+
+  label {
+    width: 300px;
+  }
+
+  input {
+    padding: 5px 10px;
+  }
+}
+
+form button {
+  background: #ff681d;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+}

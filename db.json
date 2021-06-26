@@ -144,5 +144,24 @@
         "smartphone_apple"
       ]
     }
+  ],
+  "favoriteList": [
+    {
+      "userId": 1,
+      "product": {
+        "id": 6,
+        "name": "Ноутбук Apple MacBook Air Retina M1 / 8ГБ / 256SSD / 13 / Mac OS Big Sur / (MGN63RU/A)",
+        "price": 556990,
+        "urlImg": "assets/images/produts/laptop/apple.jpg",
+        "tags": [
+          "",
+          "apple",
+          "macbook",
+          "laptop",
+          "laptop_macBook"
+        ]
+      },
+      "id": 1
+    }
   ]
 }

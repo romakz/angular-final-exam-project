@@ -27,6 +27,11 @@ import {ProductService} from './service/product.service';
 import { NameCutPipe } from './pipe/name-cut.pipe';
 import {AccoutPageGuard} from './guard/accout-page.guard';
 import {AccoutPaheForChildGuard} from './guard/accout-pahe-for-child.guard';
+import {FavoriteListService} from './service/favorite-list.service';
+import { ProfileInfoComponent } from './page/my-account-page/profile-info/profile-info.component';
+import { HistoryOrdersComponent } from './page/my-account-page/history-orders/history-orders.component';
+import { FavoriteListComponent } from './page/my-account-page/favorite-list/favorite-list.component';
+import {StoreModule} from './module/store/store.module';
 
 @NgModule({
   declarations: [
@@ -41,7 +46,10 @@ import {AccoutPaheForChildGuard} from './guard/accout-pahe-for-child.guard';
     LoginPageComponent,
     RegistrationPageComponent,
     MyAccountPageComponent,
-    NameCutPipe
+    NameCutPipe,
+    ProfileInfoComponent,
+    HistoryOrdersComponent,
+    FavoriteListComponent
   ],
   imports: [
     BrowserModule,
@@ -53,12 +61,14 @@ import {AccoutPaheForChildGuard} from './guard/accout-pahe-for-child.guard';
     MatMenuModule,
     MatInputModule,
     MatFormFieldModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule
   ],
   providers: [
     AuthService,
     UserService,
     ProductService,
+    FavoriteListService,
     AccoutPageGuard,
     AccoutPaheForChildGuard
   ],

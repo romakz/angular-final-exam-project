@@ -1,0 +1,25 @@
+<h2>Мой профиль</h2>
+
+<form [formGroup]="userForm" (ngSubmit)="saveUserData()">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" formControlName="name" value="{{user.name}}">
+  </div>
+
+  <div>
+    <label for="surname">Surname</label>
+    <input type="text" id="surname" name="surname" formControlName="surname" value="{{user.surname}}">
+  </div>
+
+  <div>
+    <label for="pass">Email</label>
+    <input type="email" id="email" name="email" formControlName="email" value="{{user.email}}">
+  </div>
+
+  <div>
+    <label for="pass">Password</label>
+    <input type="password" id="pass" name="password" formControlName="password" value="{{user.password}}">
+  </div>
+
+  <button type="submit">Save</button>
+</form>

@@ -7,7 +7,7 @@
 .box-flex {
   width: 100%;
   display: flex;
-  //align-items: center;
+  align-items: start;
   justify-content: space-between;
 }
 
@@ -16,6 +16,8 @@
   background: #fff;
   border-radius: 8px;
   overflow: hidden;
+  position: relative;
+  min-height: 400px;
 
   button {
     width: 100%;
@@ -23,6 +25,24 @@
     padding: 10px;
     font-weight: 600;
     cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    &:hover {
+      color: #fff;
+      background: #ff681d;
+    }
+  }
+
+  .div-link {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 
     &:hover {
       color: #fff;
@@ -37,26 +57,9 @@
   border-radius: 8px;
   padding: 20px;
   box-sizing: border-box;
+}
 
-  form div {
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-
-    label {
-      width: 300px;
-    }
-
-    input {
-      padding: 5px 10px;
-    }
-  }
-
-  form button {
-    background: #ff681d;
-    padding: 10px;
-    border: none;
-    border-radius: 20px;
-    color: #fff;
-  }
+.active-link {
+  color: #fff;
+  background: #ff681d;
 }

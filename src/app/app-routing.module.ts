@@ -6,6 +6,9 @@ import {RegistrationPageComponent} from "./page/registration-page/registration-p
 import {MyAccountPageComponent} from "./page/my-account-page/my-account-page.component";
 import {AccoutPageGuard} from './guard/accout-page.guard';
 import {AccoutPaheForChildGuard} from './guard/accout-pahe-for-child.guard';
+import {ProfileInfoComponent} from './page/my-account-page/profile-info/profile-info.component';
+import {HistoryOrdersComponent} from './page/my-account-page/history-orders/history-orders.component';
+import {FavoriteListComponent} from './page/my-account-page/favorite-list/favorite-list.component';
 
 const routes: Routes = [
   {
@@ -16,7 +19,21 @@ const routes: Routes = [
     path: 'my-account',
     component: MyAccountPageComponent,
     canActivate: [AccoutPageGuard],
-    canActivateChild: [AccoutPaheForChildGuard]
+    canActivateChild: [AccoutPaheForChildGuard],
+    children: [
+      {
+        path: 'profile-info',
+        component: ProfileInfoComponent
+      },
+      {
+        path: 'history-orders',
+        component: HistoryOrdersComponent
+      },
+      {
+        path: 'favorite-list',
+        component: FavoriteListComponent
+      }
+    ]
   },
   {
     path: 'store',

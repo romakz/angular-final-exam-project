@@ -7,6 +7,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {ProductCardComponent} from '../../page/store-page/product-card/product-card.component';
 import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 const storeRoutes: Routes = [
   {
@@ -21,15 +22,17 @@ const storeRoutes: Routes = [
     FilterPanelComponent,
     ProductCardComponent
   ],
-    imports: [
-      CommonModule,
-      RouterModule.forChild(storeRoutes),
-      ReactiveFormsModule,
-      MatCheckboxModule,
-      MatButtonModule
-    ],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(storeRoutes),
+    ReactiveFormsModule,
+    MatCheckboxModule,
+    MatButtonModule,
+    MatIconModule
+  ],
   exports: [
-    RouterModule
+    RouterModule,
+    ProductCardComponent
   ]
 })
 export class StoreModule { }
